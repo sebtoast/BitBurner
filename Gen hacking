@@ -1,0 +1,16 @@
+var target = "n00dles";
+
+var moneyTresh = getServerMaxMoney(target) * 0.75;
+
+var securitytresh = getServerSecurityLevel(target) + 5;
+
+
+while(true){
+	if (getServerSecurityLevel(target) > securitytresh) {
+		weaken(target);
+	} else if (getServerMoneyAvailable(target) < moneyTresh) {
+		grow(target);
+	} else {
+		hack(target);
+	}
+}
